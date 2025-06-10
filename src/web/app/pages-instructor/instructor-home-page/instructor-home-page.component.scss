@@ -1,0 +1,47 @@
+.padding-0 {
+  padding: 0;
+}
+
+.btn-toolbar {
+  white-space: nowrap;
+  margin-top: 5px;
+  margin-bottom: 2px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.course-header {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.dropdown-item {
+  border: none;
+}
+
+.no-border {
+  border: none;
+}
+
+.text-color-lightgray {
+  color: lightgray;
+}
+
+@media (width <= 450px) {
+  .card-header {
+    display: block;
+  }
+
+  .card-header-btn-toolbar {
+    text-align: right;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  tm-panel-chevron {
+    margin-left: auto;
+  }
+}

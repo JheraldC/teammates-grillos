@@ -1,0 +1,19 @@
+.fill-plain {
+  background-color: #eaeff5;
+}
+
+.control-label {
+  font-weight: 700;
+
+  @media (width >= 576px) {
+    text-align: right;
+  }
+}
+
+.padding-0 {
+  padding: 0;
+}
+
+.margin-bottom-label {
+  margin-bottom: 0.5rem; // same margin as label
+}

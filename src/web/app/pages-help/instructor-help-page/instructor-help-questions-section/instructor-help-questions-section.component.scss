@@ -1,0 +1,63 @@
+.instr-help-qn-first {
+  padding-top: 5px;
+}
+
+.instr-help-qn-last {
+  padding-bottom: 5px;
+}
+
+button {
+  text-align: left;
+}
+
+.ui-text {
+  font-weight: bold;
+  color: #908b8b;
+  background-color: #e6e9e9;
+  font-size: 13px;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.margin-bottom-20px {
+  margin-bottom: 20px;
+}
+
+.color-positive {
+  color: #108627;
+}
+
+.color-negative {
+  color: #e74c3c;
+}
+
+.color-neutral {
+  color: gray;
+}
+
+.section-header {
+  .fa-anchor {
+    display: none;
+  }
+
+  @media (width <= 768px) {
+    .fa-anchor {
+      display: block;
+      cursor: pointer;
+    }
+  }
+
+  @media (width >= 768px) {
+    &:hover {
+      .fa-anchor {
+        display: block;
+        opacity: 0.3;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

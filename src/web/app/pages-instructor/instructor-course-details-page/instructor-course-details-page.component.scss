@@ -1,0 +1,30 @@
+.form-group {
+  margin-bottom: 0.5rem;
+}
+
+.fill-plain {
+  background-color: #eaeff5;
+}
+
+button {
+  margin-right: 5px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.btn-link:hover {
+  cursor: pointer;
+}
+
+.student-table-margin {
+  margin-top: 50px;
+}
+
+@media (width <= 768px) {
+  #btn-remind-all,
+  #btn-download {
+    margin-bottom: 0.5rem;
+  }
+}

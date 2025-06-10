@@ -1,0 +1,30 @@
+.card-header {
+  cursor: pointer;
+
+  .fa-anchor {
+    display: none;
+  }
+
+  @media (width <= 768px) {
+    .fa-anchor {
+      display: block;
+    }
+  }
+
+  @media (width >= 768px) {
+    &:hover {
+      .fa-anchor {
+        display: block;
+        opacity: 0.3;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.card-body {
+  overflow: hidden;
+}

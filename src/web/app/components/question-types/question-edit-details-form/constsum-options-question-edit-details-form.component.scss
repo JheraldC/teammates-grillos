@@ -1,0 +1,29 @@
+.margin-top-10px {
+  margin-top: 10px;
+}
+
+.margin-bottom-20px {
+  margin-bottom: 20px;
+}
+
+.padding-left-12px {
+  padding-left: 12px;
+}
+
+.row {
+  align-items: center;
+  display: flex;
+}
+
+.input-group-addon {
+  cursor: move;
+  resize: both;
+  padding: 0.375rem 0.75rem;
+  margin-bottom: 0;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  text-align: center;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+}
