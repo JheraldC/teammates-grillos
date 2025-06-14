@@ -42,6 +42,10 @@ WORKDIR /app
 # Copiar desde la etapa de construcción
 COPY --from=build /app /app
 
+# Definir variables para que Jetty escuche en 0.0.0.0:8080
+ENV SERVER_ADDRESS=0.0.0.0
+ENV SERVER_PORT=8080
+
 # Exponer puerto por defecto
 EXPOSE 8080
 
