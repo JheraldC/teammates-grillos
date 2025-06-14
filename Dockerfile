@@ -3,6 +3,7 @@
 # Adjust NODE_VERSION as desired
 ARG NODE_VERSION=20.18.0
 FROM node:${NODE_VERSION}-slim AS base
+FROM eclipse-temurin:17-jdk-alpine
 
 LABEL fly_launch_runtime="Node.js"
 
@@ -12,6 +13,8 @@ WORKDIR /app
 # Set production environment
 ENV NODE_ENV="production"
 
+# Permisos para gradlew
+RUN chmod +x ./gradlew
 
 # Throw-away build stage to reduce size of final image
 FROM base AS build
@@ -23,6 +26,9 @@ RUN apt-get update -qq && \
 # Install node modules
 COPY package-lock.json package.json ./
 RUN npm ci --include=dev
+
+# Instalar dependencias (precarga)
+RUN ./gradlew --no-daemon build || true
 
 # Copy application code
 COPY . .
