@@ -1,0 +1,11 @@
+.mce-content-body {
+  font-size: 0.875rem;
+}
+
+.mce-content-readonly {
+  cursor: not-allowed;
+}
+
+.mce-content-body[data-mce-placeholder] {
+  opacity: 0.7;
+}

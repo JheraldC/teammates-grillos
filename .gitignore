@@ -1,25 +1,26 @@
+
 .DS_Store
-*.orig
-*.class
-*.jar
-*.ext
-*.bin
-*.bak
-*.db
-*.exe
+#*.orig
+#*.class
+#*.jar
+#*.ext
+#*.bin
+#*.bak
+#*.db
+#*.exe
 
 # Node.js
 node_modules/
-npm-debug.log
-coverage/*
-.eslintcache
-.stylelintcache
+#npm-debug.log
+#coverage/*
+#.eslintcache
+#.stylelintcache
 
 # Gradle
-.gradle
-build/
-bin/
-!gradle-wrapper.jar
+#.gradle
+#build/
+#bin/
+#!gradle-wrapper.jar
 
 # Eclipse
 .classpath
@@ -59,28 +60,28 @@ src/lnp/resources/tests/*
 .angular/cache
 
 # TEAMMATES
-gradle.properties
-build.properties
-build-dev.properties
-test.properties
-client.properties
-config.ts
-app.yaml
-geckodriver*
-chromedriver*
-api-output.ts
-api-request.ts
-api-const.ts
-src/main/resources/firebase-credentials.json
-src/client/java/teammates/client/scripts/statistics/data/
-src/client/java/teammates/client/scripts/log/
-src/e2e/resources/gmail-api/
-src/e2e/resources/downloads/
-src/web/dist/*
-src/web/webtools/*
-filestorage-dev/*
-datastore-dev/datastore/*
-postgres-data/
+#gradle.properties
+#build.properties
+#build-dev.properties
+#test.properties
+#client.properties
+#config.ts
+#app.yaml
+#geckodriver*
+#chromedriver*
+#api-output.ts
+#api-request.ts
+#api-const.ts
+#src/main/resources/firebase-credentials.json
+#src/client/java/teammates/client/scripts/statistics/data/
+#src/client/java/teammates/client/scripts/log/
+#src/e2e/resources/gmail-api/
+#src/e2e/resources/downloads/
+#src/web/dist/*
+#src/web/webtools/*
+#filestorage-dev/*
+#datastore-dev/datastore/*
+#postgres-data/
 
 !.gitkeep
 
