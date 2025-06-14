@@ -3,7 +3,6 @@
 # Adjust NODE_VERSION as desired
 ARG NODE_VERSION=20.18.0
 FROM node:${NODE_VERSION}-slim AS base
-FROM gradle:8.7.0-jdk17 as build
 
 LABEL fly_launch_runtime="Node.js"
 
@@ -30,8 +29,6 @@ COPY . .
 
 # Build application
 RUN npm run build
-# Descarga dependencias para cacheo
-RUN gradle build --no-daemon || return 0
 
 # Remove development dependencies
 RUN npm prune --omit=dev
