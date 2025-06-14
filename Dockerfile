@@ -1,51 +1,49 @@
 # syntax = docker/dockerfile:1
 
-# Adjust NODE_VERSION as desired
 ARG NODE_VERSION=20.18.0
-FROM node:${NODE_VERSION}-slim AS base
-FROM eclipse-temurin:17-jdk-alpine
+FROM node:${NODE_VERSION}-slim AS build
 
 LABEL fly_launch_runtime="Node.js"
 
-# Node.js app lives here
+# Directorio de trabajo
 WORKDIR /app
 
-# Set production environment
-ENV NODE_ENV="production"
-
-# Permisos para gradlew
-RUN chmod +x ./gradlew
-
-# Throw-away build stage to reduce size of final image
-FROM base AS build
-
-# Install packages needed to build node modules
+# Instalar herramientas de compilación
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential node-gyp pkg-config python-is-python3
+    apt-get install --no-install-recommends -y build-essential node-gyp pkg-config python-is-python3 && \
+    rm -rf /var/lib/apt/lists/*
 
-# Install node modules
-COPY package-lock.json package.json ./
-RUN npm ci --include=dev
+# Copiar dependencias
+COPY package.json package-lock.json ./
 
-# Instalar dependencias (precarga)
-RUN ./gradlew --no-daemon build || true
+# Limpiar caché npm e instalar dependencias
+RUN npm cache clean --force && npm ci --include=dev
 
-# Copy application code
+# Copiar resto del código fuente
 COPY . .
 
-# Build application
+# Dar permisos a gradlew
+RUN chmod +x ./gradlew
+
+# Precompilación de Gradle
+RUN ./gradlew --no-daemon build || true
+
+# Construcción aplicación Node
 RUN npm run build
 
-# Remove development dependencies
+# Eliminar dependencias de desarrollo
 RUN npm prune --omit=dev
 
+# Imagen final
+FROM eclipse-temurin:17-jdk-alpine
 
-# Final stage for app image
-FROM base
+WORKDIR /app
 
-# Copy built application
+# Copiar desde la etapa de construcción
 COPY --from=build /app /app
 
-# Start the server by default, this can be overwritten at runtime
+# Exponer puerto por defecto
 EXPOSE 8080
+
+# Ejecutar servidor
 CMD ["./gradlew", "serverRun"]
