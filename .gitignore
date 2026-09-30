@@ -91,3 +91,16 @@ docs/_site/*
 docs/_markbind/logs/*
 .stylelintcache
 .eslintcache
+
+# Local environment and generated files
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+myenv/
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+*:Zone.Identifier

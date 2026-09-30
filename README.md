@@ -1,3 +1,42 @@
+# Trabajo académico: testing de TEAMMATES — equipo Grillos
+
+Repositorio utilizado por el equipo Grillos para un trabajo académico centrado principalmente en **pruebas de software** sobre TEAMMATES.
+
+**TEAMMATES es el proyecto open source original**, desarrollado por sus propios autores. Nuestra participación se presenta como trabajo de testing y preparación del entorno de evaluación; no como creación de toda la plataforma ni de todas las pruebas heredadas.
+
+## Capacidades que muestra este trabajo
+
+- Comprensión y preparación del entorno de un proyecto existente.
+- Trabajo con una aplicación que combina Java, Angular y Gradle.
+- Ejecución y revisión de pruebas y de sus resultados en el contexto académico.
+- Lectura de reportes y documentación de calidad de software.
+
+El detalle de tipos de prueba ejecutados por cada integrante, fechas y resultados debe respaldarse con las evidencias del equipo. Este README no atribuye porcentajes de cobertura ni cantidades de pruebas sin ese respaldo.
+
+## Código y evidencias disponibles
+
+| Recurso | Función |
+| --- | --- |
+| [src](src) | Código fuente y pruebas del proyecto |
+| [build.gradle](build.gradle) | Configuración de construcción y tareas |
+| [package.json](package.json) | Dependencias y scripts del frontend |
+| [docs/setting-up.md](docs/setting-up.md) | Preparación del entorno del proyecto original |
+| [docs/unit-testing.md](docs/unit-testing.md) | Documentación original de pruebas unitarias |
+| [docs/e2e-testing.md](docs/e2e-testing.md) | Documentación original de pruebas de extremo a extremo |
+| [build/reports/tests/test/index.html](build/reports/tests/test/index.html) | Reporte histórico de pruebas que ya estaba versionado |
+
+Para consultar el reporte HTML, abrirlo localmente con sus recursos asociados. Su presencia es evidencia de un archivo de resultados histórico; no certifica una ejecución reciente ni identifica por sí sola qué pruebas creó el equipo.
+
+## Reproducir el trabajo
+
+Seguir la guía de preparación del proyecto original y revisar la configuración de Gradle y las dependencias del entorno. Los reportes históricos se conservan para no perder evidencia. No se declara que todas las pruebas pasan en el estado actual del repositorio.
+
+## Autoría y licencia
+
+Proyecto original: [TEAMMATES/teammates](https://github.com/TEAMMATES/teammates). Se conserva [LICENSE](LICENSE) y la documentación original a continuación.
+
+---
+
 # TEAMMATES Developer Web Site
 
 [![GitHub Actions Build Status Component Tests](https://github.com/TEAMMATES/teammates/workflows/Component%20Tests/badge.svg)](https://github.com/TEAMMATES/teammates/actions)
